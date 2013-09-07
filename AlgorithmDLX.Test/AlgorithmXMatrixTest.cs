@@ -3,17 +3,17 @@ using System.Collections.Generic;
 using System.Linq;
 using NUnit.Framework;
 
-namespace ExactCover.Test
+namespace AlgorithmDLX.Test
 {
     [TestFixture]
-    public class ExactCoverMatrixTest
+    public class AlgorithmXMatrixTest
     {
         [Test]
         [ExpectedException(typeof(ArgumentException))]
         public void ArgumentException_Is_Thrown_If_Columns_Are_Not_Ordered()
         {
             // arrange
-            var m = new ExactCoverMatrix(4);
+            var m = new AlgorithmXMatrix(4);
 
             // act
             m.AddRows(new[]
@@ -26,10 +26,10 @@ namespace ExactCover.Test
         }
 
         [Test]
-        public void Solve_Returns_Correct_Solution_For_Test_Matrix_1()
+        public void GetAllExactCovers_Returns_Correct_Solution_For_Test_Matrix_1()
         {
             // arrange
-            var m = new ExactCoverMatrix(7);
+            var m = new AlgorithmXMatrix(7);
             m.AddRows(new[]
             {
                 new[] {2, 4, 5},
@@ -41,7 +41,7 @@ namespace ExactCover.Test
             });
 
             // act
-            var solutions = m.Solve();
+            var solutions = m.GetAllExactCovers();
 
             // assert
 
@@ -59,10 +59,10 @@ namespace ExactCover.Test
         }
 
         [Test]
-        public void Solve_Returns_Correct_Solution_For_Test_Matrix_1_With_Additional_Empty_Rows()
+        public void GetAllExactCovers_Returns_Correct_Solution_For_Test_Matrix_1_With_Additional_Empty_Rows()
         {
             // arrange
-            var m = new ExactCoverMatrix(7);
+            var m = new AlgorithmXMatrix(7);
             m.AddRows(new[]
             {
                 new int[0],
@@ -75,7 +75,7 @@ namespace ExactCover.Test
             });
 
             // act
-            var solutions = m.Solve();
+            var solutions = m.GetAllExactCovers();
 
             // assert
 
@@ -93,10 +93,10 @@ namespace ExactCover.Test
         }
 
         [Test]
-        public void Solve_Returns_Correct_Solution_For_Test_Matrix_2()
+        public void GetAllExactCovers_Returns_Correct_Solution_For_Test_Matrix_2()
         {
             // arrange
-            var m = new ExactCoverMatrix(4);
+            var m = new AlgorithmXMatrix(4);
             m.AddRows(new[]
             {
                 new[] {0, 1, 2},
@@ -106,7 +106,7 @@ namespace ExactCover.Test
             });
 
             // act
-            var solutions = m.Solve();
+            var solutions = m.GetAllExactCovers();
 
             // assert
             AssertSoolutionsAreEqual(
@@ -128,10 +128,10 @@ namespace ExactCover.Test
         }
 
         [Test]
-        public void Solve_Returns_No_Solutions_For_Test_Matrix_3()
+        public void GetAllExactCovers_Returns_No_Solutions_For_Test_Matrix_3()
         {
             // arrange
-            var m = new ExactCoverMatrix(4);
+            var m = new AlgorithmXMatrix(4);
             m.AddRows(new[]
             {
                 new[] {0, 1},
@@ -140,12 +140,12 @@ namespace ExactCover.Test
             });
 
             // act
-            var solutions = m.Solve();
+            var solutions = m.GetAllExactCovers();
 
             // assert
             Assert.AreEqual(0, solutions.Count());
         }
-
+ 
         #region Helpers
 
         private static void AssertSoolutionsAreEqual(IEnumerable<IEnumerable<IEnumerable<int>>> expected,

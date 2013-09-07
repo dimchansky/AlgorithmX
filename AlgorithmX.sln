@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExactCover", "ExactCover\ExactCover.csproj", "{D42BDB13-33A9-49ED-BFE5-809A23FC9041}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlgorithmDLX", "AlgorithmDLX\AlgorithmDLX.csproj", "{D42BDB13-33A9-49ED-BFE5-809A23FC9041}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExactCover.Test", "ExactCover.Test\ExactCover.Test.csproj", "{55ECAE3A-2738-4581-A0F2-826F546F6B77}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlgorithmDLX.Test", "AlgorithmDLX.Test\AlgorithmDLX.Test.csproj", "{55ECAE3A-2738-4581-A0F2-826F546F6B77}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{39B17EEE-29D5-4858-8A87-02C6DFF90A2A}"
 	ProjectSection(SolutionItems) = preProject
