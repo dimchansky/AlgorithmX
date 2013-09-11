@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using OrderedColumnsRow = System.Collections.Generic.IEnumerable<int>;
+using OrderedColumnsRow = System.Collections.Generic.IList<int>;
 
 namespace AlgorithmDLX
 {
@@ -66,7 +66,7 @@ namespace AlgorithmDLX
             var headRight = _head.Right;
             if (headRight == _head)
             {
-                yield return partialSolution.Select(o => o.GetOrderedColumnsRow());
+                yield return partialSolution.Select(o => o.GetOrderedColumnsRow().ToArray());
             }
 
             var c = headRight.Column;
